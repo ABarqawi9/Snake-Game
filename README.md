@@ -70,6 +70,3 @@ Contributions to this project are welcome! To report issues or suggest improveme
 
 This project is licensed under the MIT License. Refer to the [LICENSE](LICENSE) file for details.
 
----
-
-Feel free to include this README file with your Snake Game project, and update it as you make improvements or add new features to your game.
