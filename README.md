@@ -1,5 +1,22 @@
 # Snake Game
 
+![Python Version](https://img.shields.io/badge/Python-3.x-blue)
+![Tkinter](https://img.shields.io/badge/Library-Tkinter-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+## Table of Contents
+
+- [Description](#description)
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [How to Play](#how-to-play)
+  - [Option 1: Password Strength Checking](#option-1-password-strength-checking)
+  - [Option 2: Random Password Generation](#option-2-random-password-generation)
+- [Customization](#customization)
+- [Future Enhancements](#future-enhancements)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Description
 
 Welcome to the Snake Game! This Python script resurrects the classic Snake Game using Python and the Tkinter library. Relive the excitement of controlling a snake, gobbling up food, and growing while dodging walls and yourself.
@@ -69,4 +86,3 @@ Contributions to this project are welcome! To report issues or suggest improveme
 ## License
 
 This project is licensed under the MIT License. Refer to the [LICENSE](LICENSE) file for details.
-
