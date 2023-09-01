@@ -1,9 +1,5 @@
 # Snake Game
 
-![Python Version](https://img.shields.io/badge/Python-3.x-blue)
-![Tkinter](https://img.shields.io/badge/Library-Tkinter-orange)
-![License](https://img.shields.io/badge/License-MIT-green)
-
 ## Description
 
 Welcome to the Snake Game! This Python script resurrects the classic Snake Game using Python and the Tkinter library. Relive the excitement of controlling a snake, gobbling up food, and growing while dodging walls and yourself.
