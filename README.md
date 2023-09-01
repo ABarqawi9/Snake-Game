@@ -1,6 +1,3 @@
-Certainly! Here's a README file for the Snake game implemented using Tkinter:
-
----
 
 # Snake Game
 
