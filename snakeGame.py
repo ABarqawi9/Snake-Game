@@ -10,7 +10,6 @@ SNAKE_COLOR = "#C0C0C0"
 FOOD_COLOR = "#FFD700"
 BACKGROUND_COLOR = "#000000"
 
-
 class Snake:
 
     def __init__(self):
@@ -25,18 +24,13 @@ class Snake:
             square = canvas.create_rectangle(x, y, x + SPACE_SIZE, y + SPACE_SIZE)
             self.squares.append(square)
 
-
 class Food:
 
     def __init__(self):
-
         x = random.randint(0, (GAME_WIDTH / SPACE_SIZE)-1) * SPACE_SIZE
         y = random.randint(0, (GAME_HEIGHT / SPACE_SIZE) - 1) * SPACE_SIZE
-
         self.coordinates = [x, y]
-
         canvas.create_oval(x, y, x + SPACE_SIZE, y + SPACE_SIZE, fill=FOOD_COLOR, tag="food")
-
 
 def next_turn(snake, food):
     global direction
@@ -66,7 +60,6 @@ def next_turn(snake, food):
         food = Food()
         # Change snake color to gold
         canvas.itemconfig(snake.squares[0], fill="#FFD700")
-
     else:
         del snake.coordinates[-1]
         canvas.delete(snake.squares[-1])
@@ -77,27 +70,25 @@ def next_turn(snake, food):
     else:
         window.after(SPEED, next_turn, snake, food)
 
-
-def change_direction(new_direction):
-
+def change_direction(event):
     global direction
 
-    if new_direction == 'left':
-        if direction != 'right':
-            direction = new_direction
-    elif new_direction == 'right':
-        if direction != 'left':
-            direction = new_direction
-    elif new_direction == 'up':
-        if direction != 'down':
-            direction = new_direction
-    elif new_direction == 'down':
-        if direction != 'up':
-            direction = new_direction
+    key = event.keysym.lower()  # Get the lowercase key symbol
 
+    if key == 'a':
+        if direction != 'right':
+            direction = 'left'
+    elif key == 'd':
+        if direction != 'left':
+            direction = 'right'
+    elif key == 'w':
+        if direction != 'down':
+            direction = 'up'
+    elif key == 's':
+        if direction != 'up':
+            direction = 'down'
 
 def check_collisions(snake):
-
     x, y = snake.coordinates[0]
 
     if x < 0 or x >= GAME_WIDTH:
@@ -111,13 +102,31 @@ def check_collisions(snake):
 
     return False
 
-
 def game_over():
-
     canvas.delete(ALL)
     canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2,
-                       font=('consolas',70), text="GAME OVER", fill="red", tag="gameover")
+                       font=('consolas', 70), text="GAME OVER", fill="red", tag="gameover")
 
+def start_game(event):
+    global score, direction
+
+    # Reset the score and direction
+    score = 0
+    direction = 'down'
+    label.config(text="Score:{}".format(score))
+
+    # Delete any existing game over message
+    canvas.delete("gameover")
+
+    # Clear the canvas
+    canvas.delete(ALL)
+
+    # Create a new snake and food
+    snake = Snake()
+    food = Food()
+
+    # Start the game loop
+    next_turn(snake, food)
 
 window = Tk()
 window.title("Snake game")
@@ -126,6 +135,10 @@ window.resizable(False, False)
 score = 0
 direction = 'down'
 
+# Add label for "Press <Left Mouse Button> to play"
+play_label = Label(window, text="Press <Left Mouse Button> to play", font=('consolas', 20))
+play_label.pack()
+
 label = Label(window, text="Score:{}".format(score), font=('consolas', 40))
 label.pack()
 
@@ -133,6 +146,12 @@ canvas = Canvas(window, bg=BACKGROUND_COLOR, height=GAME_HEIGHT, width=GAME_WIDT
 canvas.pack()
 
 window.update()
+
+# Bind left mouse button click event to start_game function
+canvas.bind("<Button-1>", start_game)
+
+# Bind W, A, S, D keys to change_direction function
+window.bind('<Key>', change_direction)
 
 window_width = window.winfo_width()
 window_height = window.winfo_height()
@@ -143,15 +162,5 @@ x = int((screen_width/2) - (window_width/2))
 y = int((screen_height/2) - (window_height/2))
 
 window.geometry(f"{window_width}x{window_height}+{x}+{y}")
-
-window.bind('<Left>', lambda event: change_direction('left'))
-window.bind('<Right>', lambda event: change_direction('right'))
-window.bind('<Up>', lambda event: change_direction('up'))
-window.bind('<Down>', lambda event: change_direction('down'))
-
-snake = Snake()
-food = Food()
-
-next_turn(snake, food)
 
 window.mainloop()
