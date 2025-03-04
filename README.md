@@ -8,7 +8,6 @@
 - [How to Play](#how-to-play)
 - [Customization](#customization)
 - [Future Enhancements](#future-enhancements)
-- [Contributing](#contributing)
 
 ## Description
 
