@@ -75,7 +75,3 @@ This is a basic implementation of the Snake game. Here are some ideas for future
 ## Contributing
 
 Contributions to this project are welcome! If you find any issues or have suggestions for improvement, please feel free to open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
