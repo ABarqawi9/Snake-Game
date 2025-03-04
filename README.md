@@ -4,7 +4,6 @@
 
 - [Description](#description)
 - [Features](#features)
-- [Prerequisites](#prerequisites)
 - [How to Play](#how-to-play)
 - [Customization](#customization)
 - [Future Enhancements](#future-enhancements)
@@ -22,12 +21,6 @@ Welcome to the Snake Game! This Python script brings back the classic Snake Game
 - **Collision Detection**: The game checks for collisions with the walls and the snake's own body. If a collision occurs, the game ends.
 
 - **Game Over**: When the game ends, it displays a "GAME OVER" message along with your final score.
-
-## Prerequisites
-
-Before playing the Snake Game, ensure you have the following:
-
-- Python 3.x installed on your system.
 
 ## How to Play
 
