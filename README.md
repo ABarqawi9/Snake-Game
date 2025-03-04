@@ -71,7 +71,3 @@ This is a basic implementation of the Snake game. Here are some ideas for future
 6. **Obstacles**: Introduce obstacles that the snake must navigate around.
 
 7. **Multiplayer**: Create a multiplayer version where multiple players can compete.
-
-## Contributing
-
-Contributions to this project are welcome! If you find any issues or have suggestions for improvement, please feel free to open an issue or submit a pull request.
