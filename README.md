@@ -1,9 +1,5 @@
 # Snake Game
 
-![Python Version](https://img.shields.io/badge/Python-3.x-blue)
-![Tkinter](https://img.shields.io/badge/Library-Tkinter-orange)
-![License](https://img.shields.io/badge/License-MIT-green)
-
 ## Table of Contents
 
 - [Description](#description)
